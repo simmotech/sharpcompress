@@ -18,6 +18,12 @@ namespace SharpCompress.Test
         }
 
         [TestMethod]
+        public void Zip_ZipX_ArchiveStreamRead()
+        {
+            ArchiveStreamRead("Zip.zipx");
+        }
+
+        [TestMethod]
         public void Zip_BZip2_Streamed_ArchiveStreamRead()
         {
             ArchiveStreamRead("Zip.bzip2.dd.zip");

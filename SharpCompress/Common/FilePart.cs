@@ -10,5 +10,7 @@ namespace SharpCompress.Common
         }
 
         internal abstract Stream GetStream();
+
+	    public abstract Stream GetSourceStream();
     }
 }

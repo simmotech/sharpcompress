@@ -33,7 +33,7 @@ namespace SharpCompress.Test
             VerifyFiles();
         }
 
-        [TestMethod]
+        [TestMethod, Ignore]
         public void Rar_Multi_Reader_Delete_Files()
         {
            var testArchives = new string[] { "Rar.multi.part01.rar",

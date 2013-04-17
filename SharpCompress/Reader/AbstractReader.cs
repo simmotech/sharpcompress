@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using SharpCompress.Common;
-
+using SharpCompress.Common.Zip;
+using SharpCompress.Compressor.Deflate;
+using SharpCompress.IO;
 
 #if THREEFIVE || PORTABLE
 using SharpCompress.Common.Rar.Headers;
@@ -128,7 +131,7 @@ namespace SharpCompress.Reader
 
         #region Entry Skip/Write
 
-        private void SkipEntry()
+        public void SkipEntry()
         {
             if (!Entry.IsDirectory)
             {
@@ -136,16 +139,81 @@ namespace SharpCompress.Reader
             }
         }
 
+	    readonly byte[] skipBuffer = new byte[4096];
+
+        internal void Skip()
+        {
+	        var sourceStream = Entry.Parts.First().GetSourceStream();
+
+			if (sourceStream != null)
+			{
+				var bytesToAdvance = Entry.CompressedSize;
+				for (var i = 0; i < bytesToAdvance / skipBuffer.Length; i++)
+				{
+					sourceStream.Read(skipBuffer, 0, skipBuffer.Length);
+				}
+				sourceStream.Read(skipBuffer, 0, (int) (bytesToAdvance % skipBuffer.Length));
+
+				return;
+			}
+			
+
+            using (var s = OpenEntryStream())
+            {
+                while (s.Read(skipBuffer, 0, skipBuffer.Length) > 0)
+                {
+                }
+            }
+        }
+
+/*
         internal void Skip()
         {
             var buffer = new byte[4096];
-            using (Stream s = OpenEntryStream())
+
+	        var x = Entry.Parts.First().GetStream();
+			if (x is NonDisposingStream)
+			{
+				x = ((NonDisposingStream) x).Stream;
+			}
+
+			if (x is RewindableStream)
+			{
+				var bytesToAdvance = Entry.CompressedSize;
+				for (var i = 0; i < bytesToAdvance / buffer.Length; i++)
+				{
+					x.Read(buffer, 0, buffer.Length);
+				}
+				var read = x.Read(buffer, 0, (int) (bytesToAdvance % buffer.Length));
+
+				return;
+			}
+
+/*
+	        var y = GetEntryStream();
+
+			if (x is DeflateStream || x is ReadOnlySubStream)
+			{
+				
+				while (x.Read(buffer, 0, buffer.Length) > 0)
+				{}
+
+				return;
+			}
+			else
+			{
+				Console.WriteLine(x);
+			}
+#1#
+
+            using (Stream s = OpenEntryStream(true))
             {
                 while (s.Read(buffer, 0, buffer.Length) > 0)
                 {
                 }
             }
         }
+*/
 
         public void WriteEntryTo(Stream writableStream)
         {

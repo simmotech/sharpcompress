@@ -3,3 +3,5 @@
 _ReSharper.SharpCompress/
 bin/
 *.user
+*.suo
+*.dotSettings

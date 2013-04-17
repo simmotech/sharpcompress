@@ -14,6 +14,11 @@ namespace SharpCompress.Common.Zip
             this.headerFactory = headerFactory;
         }
 
+	    public override Stream GetSourceStream()
+	    {
+		    return null;
+	    }
+
         internal override Stream GetStream()
         {
             if (!isLocalHeaderLoaded)

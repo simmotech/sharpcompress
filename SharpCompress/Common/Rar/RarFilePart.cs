@@ -1,4 +1,6 @@
-﻿using SharpCompress.Common.Rar.Headers;
+﻿using System.IO;
+
+using SharpCompress.Common.Rar.Headers;
 
 namespace SharpCompress.Common.Rar
 {
@@ -24,5 +26,11 @@ namespace SharpCompress.Common.Rar
             get;
             private set;
         }
+
+	    public override Stream GetSourceStream()
+	    {
+		    return null;
+	    }
+
     }
 }

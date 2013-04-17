@@ -15,6 +15,11 @@ namespace SharpCompress.Common.Zip
         internal IEnumerable<ZipHeader> ReadStreamHeader(Stream stream)
         {
             RewindableStream rewindableStream;
+
+if (stream is NonDisposingStream)
+{
+	stream = ((NonDisposingStream) stream).Stream;
+}
             if (stream is RewindableStream)
             {
                 rewindableStream = stream as RewindableStream;

@@ -31,6 +31,8 @@ namespace SharpCompress.Reader
         /// <returns></returns>
         bool MoveToNextEntry();
 
+	    void SkipEntry();
+
         /// <summary>
         /// Opens the current entry as a stream that will decompress as it is read.
         /// Read the entire stream or use SkipEntry on EntryStream.

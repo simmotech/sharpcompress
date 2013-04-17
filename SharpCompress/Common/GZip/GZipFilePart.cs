@@ -29,6 +29,10 @@ namespace SharpCompress.Common.GZip
             return stream;
         }
 
+	    public override Stream GetSourceStream()
+	    {
+		    return null;
+	    }
 
         private void ReadAndValidateGzipHeader(Stream stream)
         {

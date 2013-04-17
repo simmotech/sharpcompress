@@ -13,6 +13,7 @@ namespace SharpCompress.IO
             this.stream = stream;
         }
 
+/*
         public RewindableStream(Stream stream, MemoryStream bufferStream)
         {
             RewindableStream parent = stream as RewindableStream;
@@ -30,6 +31,7 @@ namespace SharpCompress.IO
                 isRewound = true;
             }
         }
+*/
 
         internal bool IsRecording { get; private set; }
 
@@ -72,7 +74,8 @@ namespace SharpCompress.IO
             {
                 byte[] data = bufferStream.ToArray();
                 long position = bufferStream.Position;
-                bufferStream = new MemoryStream();
+                //bufferStream = new MemoryStream();
+                ClearBuffer();
                 bufferStream.Write(data, (int)position, data.Length - (int)position);
                 bufferStream.Position = 0;
             }
@@ -120,7 +123,8 @@ namespace SharpCompress.IO
                 {
                     stream.Position = value;
                     isRewound = false;
-                    bufferStream = new MemoryStream();
+                    //bufferStream = new MemoryStream();
+	                ClearBuffer();
                 }
                 else
                 {
@@ -129,7 +133,12 @@ namespace SharpCompress.IO
             }
         }
 
-        public override int Read(byte[] buffer, int offset, int count)
+	    void ClearBuffer()
+	    {
+		    bufferStream.SetLength(0);
+	    }
+
+	    public override int Read(byte[] buffer, int offset, int count)
         {
             int read;
             if (isRewound && bufferStream.Position != bufferStream.Length)
@@ -147,7 +156,8 @@ namespace SharpCompress.IO
                 if (bufferStream.Position == bufferStream.Length && !IsRecording)
                 {
                     isRewound = false;
-                    bufferStream = new MemoryStream();
+                    //bufferStream = new MemoryStream();
+					ClearBuffer();
                 }
                 return read;
             }
@@ -160,7 +170,7 @@ namespace SharpCompress.IO
             return read;
         }
 
-        public override long Seek(long offset, SeekOrigin origin)
+	    public override long Seek(long offset, SeekOrigin origin)
         {
             throw new System.NotImplementedException();
         }
@@ -174,5 +184,10 @@ namespace SharpCompress.IO
         {
             throw new System.NotImplementedException();
         }
+
+	    public Stream Stream
+	    {
+		    get { return stream; }
+	    }
     }
 }

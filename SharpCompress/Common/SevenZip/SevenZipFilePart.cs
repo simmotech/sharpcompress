@@ -22,6 +22,11 @@ namespace SharpCompress.Common.SevenZip
             get { return Header.Name; }
         }
 
+	    public override Stream GetSourceStream()
+	    {
+		    return null;
+	    }
+
         internal override Stream GetStream()
         {
             if (!Header.HasStream)

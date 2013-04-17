@@ -1,0 +1,164 @@
+﻿Testing ...
+Current Location part 1 offset 4802
+Archive: D:\BC Settings.zip   4824 bytes   2008-08-29 06:23:42
+End central directory record PK0506 (4+18)
+==========================================
+    current  location of end-of-central-dir record: 4802 (0x000012c2) bytes
+    expected location of end-of-central-dir record: 4802 (0x000012c2) bytes
+      based on the size of the central directory of
+      168 and its relative offset of 4634 bytes
+    part number of this part (0000):                1
+    part number of start of central dir (0000):     1
+    number of entries in central dir in this part:  3
+    total number of entries in central dir:         3
+    size of central dir:                            168 (0x000000a8) bytes
+    relative offset of central dir:                 4634 (0x0000121a) bytes
+    zipfile comment length:                         0
+Current Location part 1 offset 4634
+Central directory entry PK0102 (4+42): #1
+======================================
+    part number in which file begins (0000):        1
+    relative offset of local header:                0 (0x00000000) bytes
+    version made by operating system (00):          MS-DOS, OS/2, NT FAT
+    version made by zip software (20):              2.0
+    operat. system version needed to extract (00):  MS-DOS, OS/2, NT FAT
+    unzip software version needed to extract (20):  2.0
+    general purpose bit flag (0x0000) (bit 15..0):  0000.0000 0000.0000
+      file security status  (bit 0):                not encrypted
+      extended local header (bit 3):                no
+    compression method (08):                        deflated
+      compression sub-type (deflation):             normal
+    file last modified on (0x0000391d 0x00002af5):  2008-08-29 05:23:42
+    32-bit CRC value:                               0x8f4d3fac
+    compressed size:                                2244 bytes
+    uncompressed size:                              17775 bytes
+    length of filename:                             9 characters
+    length of extra field:                          0 bytes
+    length of file comment:                         0 characters
+    internal file attributes:                       0x0000
+      apparent file type:                           binary
+    external file attributes:                       0x00000020
+      non-MSDOS external file attributes:           0x000000
+      MS-DOS file attributes (0x20):                arc
+Current Location part 1 offset 4680
+    filename:Prefs.xml
+Current Location part 1 offset 4689
+Central directory entry PK0102 (4+42): #2
+======================================
+    part number in which file begins (0000):        1
+    relative offset of local header:                2283 (0x000008eb) bytes
+    version made by operating system (00):          MS-DOS, OS/2, NT FAT
+    version made by zip software (20):              2.0
+    operat. system version needed to extract (00):  MS-DOS, OS/2, NT FAT
+    unzip software version needed to extract (20):  2.0
+    general purpose bit flag (0x0000) (bit 15..0):  0000.0000 0000.0000
+      file security status  (bit 0):                not encrypted
+      extended local header (bit 3):                no
+    compression method (08):                        deflated
+      compression sub-type (deflation):             normal
+    file last modified on (0x0000391d 0x00002af5):  2008-08-29 05:23:42
+    32-bit CRC value:                               0xa3ec0d8c
+    compressed size:                                969 bytes
+    uncompressed size:                              11756 bytes
+    length of filename:                             12 characters
+    length of extra field:                          0 bytes
+    length of file comment:                         0 characters
+    internal file attributes:                       0x0000
+      apparent file type:                           binary
+    external file attributes:                       0x00000020
+      non-MSDOS external file attributes:           0x000000
+      MS-DOS file attributes (0x20):                arc
+Current Location part 1 offset 4735
+    filename:Sessions.xml
+Current Location part 1 offset 4747
+Central directory entry PK0102 (4+42): #3
+======================================
+    part number in which file begins (0000):        1
+    relative offset of local header:                3294 (0x00000cde) bytes
+    version made by operating system (00):          MS-DOS, OS/2, NT FAT
+    version made by zip software (20):              2.0
+    operat. system version needed to extract (00):  MS-DOS, OS/2, NT FAT
+    unzip software version needed to extract (20):  2.0
+    general purpose bit flag (0x0000) (bit 15..0):  0000.0000 0000.0000
+      file security status  (bit 0):                not encrypted
+      extended local header (bit 3):                no
+    compression method (08):                        deflated
+      compression sub-type (deflation):             normal
+    file last modified on (0x0000391d 0x00002af5):  2008-08-29 05:23:42
+    32-bit CRC value:                               0x552f4d34
+    compressed size:                                1301 bytes
+    uncompressed size:                              13103 bytes
+    length of filename:                             9 characters
+    length of extra field:                          0 bytes
+    length of file comment:                         0 characters
+    internal file attributes:                       0x0000
+      apparent file type:                           binary
+    external file attributes:                       0x00000020
+      non-MSDOS external file attributes:           0x000000
+      MS-DOS file attributes (0x20):                arc
+Current Location part 1 offset 4793
+    filename:Rules.xml
+Current Location part 1 offset 0
+Local directory entry PK0304 (4+26): #1
+------------------------------------
+    operat. system version needed to extract (00):  MS-DOS, OS/2, NT FAT
+    unzip software version needed to extract (20):  2.0
+    general purpose bit flag (0x0000) (bit 15..0):  0000.0000 0000.0000
+      file security status  (bit 0):                not encrypted
+      extended local header (bit 3):                no
+    compression method (08):                        deflated
+      compression sub-type (deflation):             normal
+    file last modified on (0x0000391d 0x00002af5):  2008-08-29 05:23:42
+    32-bit CRC value:                               0x8f4d3fac
+    compressed size:                                2244 bytes
+    uncompressed size:                              17775 bytes
+    length of filename:                             9 characters
+    length of extra field:                          0 bytes
+Current Location part 1 offset 30
+    filename:Prefs.xml
+Current Location part 1 offset 39
+Testing Prefs.xml                OK
+Current Location part 1 offset 2283
+Local directory entry PK0304 (4+26): #2
+------------------------------------
+    operat. system version needed to extract (00):  MS-DOS, OS/2, NT FAT
+    unzip software version needed to extract (20):  2.0
+    general purpose bit flag (0x0000) (bit 15..0):  0000.0000 0000.0000
+      file security status  (bit 0):                not encrypted
+      extended local header (bit 3):                no
+    compression method (08):                        deflated
+      compression sub-type (deflation):             normal
+    file last modified on (0x0000391d 0x00002af5):  2008-08-29 05:23:42
+    32-bit CRC value:                               0xa3ec0d8c
+    compressed size:                                969 bytes
+    uncompressed size:                              11756 bytes
+    length of filename:                             12 characters
+    length of extra field:                          0 bytes
+Current Location part 1 offset 2313
+    filename:Sessions.xml
+Current Location part 1 offset 2325
+Testing Sessions.xml             OK
+Current Location part 1 offset 3294
+Local directory entry PK0304 (4+26): #3
+------------------------------------
+    operat. system version needed to extract (00):  MS-DOS, OS/2, NT FAT
+    unzip software version needed to extract (20):  2.0
+    general purpose bit flag (0x0000) (bit 15..0):  0000.0000 0000.0000
+      file security status  (bit 0):                not encrypted
+      extended local header (bit 3):                no
+    compression method (08):                        deflated
+      compression sub-type (deflation):             normal
+    file last modified on (0x0000391d 0x00002af5):  2008-08-29 05:23:42
+    32-bit CRC value:                               0x552f4d34
+    compressed size:                                1301 bytes
+    uncompressed size:                              13103 bytes
+    length of filename:                             9 characters
+    length of extra field:                          0 bytes
+Current Location part 1 offset 3324
+    filename:Rules.xml
+Current Location part 1 offset 3333
+Testing Rules.xml                OK
+No errors detected in compressed data of D:\BC Settings.zip.
+
+
+
